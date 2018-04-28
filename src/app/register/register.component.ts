@@ -16,15 +16,15 @@ export class RegisterComponent implements OnInit {
           // this.notify.show("Register Success. You Have to wait for admin confirmation");
 
   }
-  register_user(register: NgForm){
+   register_user(register: NgForm){
     console.log(register.value);
     this.auth.register(register.value)
     .subscribe(data => {
-        alert(data.message);
-        this.router.navigate(['login']);
+      Notifications.DisplaySuccessToastMessage('<strong>SUCCESS</strong>',' User register succesfully');
+      this.router.navigate(['login']);
     }, error => {
-    alert(error.json().errorMessage);
-    });
+      Notifications.DisplayErrorToastMessage("Register failed","Somathing went wrong"); 
+       });
   }
   cancel(){
     this.router.navigate(['']);
