@@ -1,0 +1,136 @@
+<header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>P</b>T</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Project</b>Test</span>
+    </a>
+  
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+       <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- <li class="user user-menu">
+              <a [routerLink]="['department']">
+                  <span class="label label-success">HOME</span>
+                </a>
+            </li> -->
+              <!-- Navbar Right Menu -->
+              <!-- User Account: style can be found in dropdown.less -->
+              <li *ngIf="userLogin" class="dropdown user user-menu">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="dist/img/user2-160x160.PNG" class="user-image" alt="User Image">
+                    <!-- <span class="hidden-xs">{{UserObj.user.name +" "+UserObj.user.lastName}}</span> -->
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header">
+                      <img src="dist/img/user2-160x160.PNG" class="img-circle" alt="User Image">
+
+                      <!-- <p>
+                          {{UserObj.user.name +" "+UserObj.user.lastName}}
+                        <small>{{UserObj.user.jobDescription}}</small>
+                      </p> -->
+                    </li>
+                    <!-- Menu Body -->
+                    <li class="user-body">
+                      <div class="row">
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Followers</a>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Sales</a>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                          <a href="#">Friends</a>
+                        </div>
+                      </div>
+                      <!-- /.row -->
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                      <div class="pull-left">
+                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      </div>
+                      <div class="pull-right">
+                        <a (click)="logout()" class="btn btn-default btn-flat">Sign out</a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+    </nav>
+  </header>
+  <simple-notifications></simple-notifications>
+
+<div style="padding-top:50px" class="container">
+   
+    <h5> Progetto per test </h5>
+    <p> Gestione dati personali
+        Applicativo gestione/invio dati personali: una piccola webapp che consente di gestire di dati anagrafici di persone, costituiti da:</p>
+   <ol>
+     <li>Nome*</li>
+     <li>Cognome*</li>
+     <li>Indirizzo</li>
+     <li>Località</li>
+     <li>Comune</li>
+     <li>Email*</li>
+     <li>Note*</li>
+   </ol>
+    <p>*Dati obbligatori</p>
+    
+    
+    
+    
+    <p> Entrando nell’applicazione, la pagina deve visualizzare un elenco con Nome, Cognome, Comune ed Email dei clienti.</p>
+    
+    <p>Prevedere la possibilità di filtrare l’elenco per i singoli campi</p>
+    
+    <p>Consentire all’utente l’ordinamento dei dati</p>
+    
+    <p>Prevedere un bottone “Nuova anagrafica”</p>
+    
+    <p>Gestire l’eliminazione dell’anagrafica</p>
+    
+    <p>Gestire la modifica dell’anagrafica</p>
+    
+    <p>Consentire l’invio di un’email al cliente con i dati anagrafici (lato server)</p>
+    
+    
+    <p>La modifica del record deve essere consentita in una pagina di dettaglio in cui :</p>
+    
+    <p>è possibile modificare i dati.</p>
+    
+    <p>dev’essere gestita la validazione del dato in fase di salvataggio</p>
+    
+    
+    <p>Dopo l’inserimento o la modifica del dato, deve essere evidenziato il record inserito o modificato e la pagina si deve posizionare su tale record.</p>
+    
+    
+    <p>La navigazione delle pagine dev’essere gestita tramite route di Angular.</p>
+    
+    <p>N.B.: L’applicazione deve essere responsive, utilizzabile da smartphone e tablet</p>
+    <ol>
+        <li>Tecnologia:</li>
+        <li>Server:</li>
+        <li>Java</li>
+        <li> Jersey per chiamate rest</li>
+        <li>Client:</li>
+        <li>Bootstrap</li>mySql
+        <li>eventualmente jquery</li>
+        <li>Database:</li>
+        <li>mySql</li>
+      </ol>
+  <form name="form" role="form" >
+  <a [routerLink]="['login']" *ngIf="!userLogin"  class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-pushpin"></span>Login</a>
+  <a [routerLink]="['clients']" *ngIf="userLogin"  class="btn btn-success btn-lg btn-block">See the Project</a>
+  </form>
+</div>

@@ -1,0 +1,1 @@
+export const conf = {serverUrl : "http://localhost:8084"}

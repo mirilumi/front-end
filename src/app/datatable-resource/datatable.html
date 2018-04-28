@@ -1,0 +1,99 @@
+<div style="margin: auto; max-width: 1500px; margin-bottom: 50px;">
+    <data-table id="persons-grid"
+        headerTitle="Clients"
+        [items]="items"
+        [itemCount]="itemCount"
+        (reload)="reloadItems($event)"
+
+        (rowClick)="rowClick($event)"
+        (rowDoubleClick)="rowDoubleClick($event)"
+        [rowTooltip]="rowTooltip"
+        >
+        <data-table-column
+            [property]="'firstName'"
+            [header]="'FirstName'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'lastName'"
+            [header]="'LastName'"
+            [sortable]="true"
+            [resizable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'municipality'"
+            [header]="'Municipality'"    
+            [sortable]="true"
+            [resizable]="true">    
+        </data-table-column>
+        <data-table-column
+            property="email"
+            header="Email"
+            sortable = "true"
+            resizable = "true"
+           >
+        </data-table-column>
+        <data-table-column
+            [property]="'createdDate'"
+            [header]="'Created Date'"
+            [sortable]="true">
+            <ng-template #dataTableCell let-item="item">
+                <span>{{item.createdDate | date:'dd-MM-yyyy'}}</span>
+            </ng-template>
+        </data-table-column>
+        <data-table-column
+            [property]="'lastModifiedDate'"
+            [header]="'Last Modified Date'"
+            [sortable]="true">
+            <ng-template #dataTableCell let-item="item">
+                <span>{{item.lastModifiedDate | date:'dd-MM-yyyy'}}</span>
+            </ng-template>
+        </data-table-column>
+        <data-table-column
+            [property]="'createdBy'"
+            [header]="'Created By'"
+            [sortable]="false">
+            resizable = "true"
+        </data-table-column>
+        <data-table-column
+            [property]="'lastModifiedBy'"
+            [header]="'Last Modified By'"
+            [sortable]="false">
+            resizable = "true"
+        </data-table-column>
+       <data-table-column
+            [property]="'id'"
+            [header]="'Edit'"
+            [width]="100"
+            [resizable]="true">
+            <ng-template #dataTableCell let-item="item">
+                <span style="color: grey">
+                    <button [routerLink]="['edit/'+item.id]" class="btn btn-success">Edit</button>
+                </span>
+            </ng-template> 
+         </data-table-column>
+         <data-table-column
+         [property]="'id'"
+         [header]="'Send Email'"
+         [width]="100"
+         [resizable]="true">
+         <ng-template #dataTableCell let-item="item">
+             <span style="color: grey">
+                 <button (click)="sendEmail(item.id)" class="btn btn-success">Send Email</button>
+             </span>
+         </ng-template> 
+      </data-table-column>
+         <data-table-column
+            [property]="'id'"
+            [header]="'Delete'"
+            [width]="100"
+            [resizable]="true">
+            <ng-template #dataTableCell let-item="item">
+                <span style="color: grey">
+                    <button (click)="deleteClient(item.id)" class="btn btn-danger">Delete</button>
+                </span>
+            </ng-template> 
+        </data-table-column>  
+    </data-table>
+</div>

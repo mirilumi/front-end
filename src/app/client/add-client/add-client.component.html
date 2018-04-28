@@ -1,0 +1,57 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+<div class="content-wrapper">
+    <section class="content-header">
+        <form #savedClient="ngForm" name="form" (ngSubmit)="addClient(savedClient)" role="form" >
+            <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="savedClient.firstName" placeholder="First Name" required />
+                    <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.name.$error.required }">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="savedClient.lastName" placeholder="Last Name" required />
+                    <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+            </div>
+          <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
+              <label for="address">Address</label>
+              <input type="text" name="address" id="address" class="form-control" [(ngModel)]="savedClient.address" placeholder="Address"  />
+              <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="form-control" [(ngModel)]="savedClient.email" placeholder="Email" required />
+            <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+          <div class="form-group" ng-class="{ 'has-error': form.location.$dirty && form.location.$error.required }">
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location" class="form-control" [(ngModel)]="savedClient.location" placeholder="Location"  />
+                <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.municipality.$dirty && form.municipality.$error.required }">
+            <label for="municipality">Municipality</label>
+            <input type="text" name="municipality" id="municipality" class="form-control" [(ngModel)]="savedClient.municipality" placeholder="Municipality"  />
+            <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.province.$dirty && form.province.$error.required }">
+            <label for="province">Province</label>
+            <input type="text" name="province" id="province" class="form-control" [(ngModel)]="savedClient.province" placeholder="Province"  />
+            <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.note.$dirty && form.note.$error.required }">
+            <label for="note">Note</label>
+            <textarea type="text" name="note" id="note" class="form-control" [(ngModel)]="savedClient.note" placeholder="Note" ></textarea>
+            <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+          <div class="form-actions">
+              <button type="submit" [disabled]="!savedClient.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-pushpin"></span>Save</button>
+              <a (click)="cancel()" class="btn btn-danger btn-lg btn-block">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  Cancel
+              </a>
+          </div>
+      </form>
+    </section>
+</div>
+<app-appsettings></app-appsettings>
+<app-appfooter></app-appfooter>
