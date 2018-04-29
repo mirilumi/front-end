@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from "../shared/authentication.service";
 import { Router } from "@angular/router";
 import { NgForm } from '@angular/forms';
+import { Notifications } from '../shared/notifications';
 //import { NotificationService } from 'ng2-notify-popup';
 @Component({
   selector: 'app-register',
